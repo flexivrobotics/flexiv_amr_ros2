@@ -34,7 +34,7 @@ class Lidar
 {
 public:
     explicit Lidar(rclcpp::Node& node)
-    : config_(DeclareSensorConfig(node, "amr_lidar", "/flexiv/amr/sensor/lidar/point", "AMR", 10.0))
+    : config_(DeclareSensorConfig(node, "amr_lidar", "/flexiv/amr/sensor/lidar/point", "base_link", 10.0))
     , angle_unit_(node.declare_parameter<std::string>("amr_lidar.angle_unit", "auto"))
     , distance_scale_(node.declare_parameter<double>("amr_lidar.distance_scale", 1.0))
     {

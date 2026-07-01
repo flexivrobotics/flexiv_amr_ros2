@@ -26,7 +26,7 @@ class RunInfo
 {
 public:
     explicit RunInfo(rclcpp::Node& node)
-    : config_(DeclareSensorConfig(node, "amr_run_info", "/flexiv/amr/run_info", "AMR", 1.0))
+    : config_(DeclareSensorConfig(node, "amr_run_info", "/flexiv/amr/run_info", "base_link", 1.0))
     {
         if (config_.enable) {
             publisher_ = node.create_publisher<flexiv_amr_msgs::msg::AmrRunInfo>(

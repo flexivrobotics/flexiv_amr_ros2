@@ -17,7 +17,7 @@ ament_auto_find_build_dependencies(REQUIRED
 )
 
 ament_auto_add_executable(flexiv_amr_navigation_node src/flexiv_amr_navigation_node.cpp)
-target_link_libraries(flexiv_amr_navigation_node flexiv::amr)
+target_link_libraries(flexiv_amr_navigation_node flexiv::flexiv_amr)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

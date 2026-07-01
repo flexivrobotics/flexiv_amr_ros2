@@ -4,11 +4,13 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
+        - /TF1/Frames1
         - /PointCloud21
         - /PointCloud21/Topic1
         - /LaserScan1
       Splitter Ratio: 0.5
-    Tree Height: 1269
+    Tree Height: 1303
 Visualization Manager:
   Class: ""
   Displays:
@@ -41,27 +43,84 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /robot_description
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        driving_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        driving_wheel2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        universal_wheel1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        universal_wheel11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        universal_wheel2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        universal_wheel22:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        universal_wheel3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        universal_wheel33:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        universal_wheel4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        universal_wheel44:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Mass Properties:
         Inertia: false
         Mass: false
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Class: rviz_default_plugins/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
-        AMR:
-          Value: true
         All Enabled: false
         base_link:
           Value: true
@@ -69,25 +128,7 @@ Visualization Manager:
           Value: false
         driving_wheel2:
           Value: false
-        flange:
-          Value: false
         imu_link:
-          Value: true
-        link1:
-          Value: false
-        link2:
-          Value: false
-        link3:
-          Value: false
-        link4:
-          Value: false
-        link5:
-          Value: false
-        link6:
-          Value: false
-        link7:
-          Value: false
-        odom:
           Value: true
         universal_wheel1:
           Value: false
@@ -111,36 +152,25 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          AMR:
-            base_link:
-              link1:
-                link2:
-                  link3:
-                    link4:
-                      link5:
-                        link6:
-                          link7:
-                            flange:
-                              {}
-            driving_wheel:
+        base_link:
+          driving_wheel:
+            {}
+          driving_wheel2:
+            {}
+          imu_link:
+            {}
+          universal_wheel1:
+            universal_wheel11:
               {}
-            driving_wheel2:
+          universal_wheel2:
+            universal_wheel22:
               {}
-            imu_link:
+          universal_wheel3:
+            universal_wheel33:
               {}
-            universal_wheel1:
-              universal_wheel11:
-                {}
-            universal_wheel2:
-              universal_wheel22:
-                {}
-            universal_wheel3:
-              universal_wheel33:
-                {}
-            universal_wheel4:
-              universal_wheel44:
-                {}
+          universal_wheel4:
+            universal_wheel44:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -235,7 +265,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -261,33 +291,33 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 5.659562110900879
+      Distance: 4.632004737854004
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.16462835669517517
-        Y: 0.00739469937980175
-        Z: 0.9393721222877502
+        X: -0.19632042944431305
+        Y: 0.11484421044588089
+        Z: 0.28911393880844116
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7047971487045288
-      Target Frame: AMR
+      Pitch: 0.6302030086517334
+      Target Frame: base_link
       Value: Orbit (rviz)
-      Yaw: 1.8999890089035034
+      Yaw: 2.1449971199035645
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1529
+  Height: 1563
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000001000000000000021000000591fc0200000001fb000000100044006900730070006c006100790073010000004700000591000000f100ffffff000007e90000059100000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000010000000000000210000005b3fc0200000001fb000000100044006900730070006c0061007900730100000047000005b3000000f100ffffff000007e9000005b300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Width: 2560
   X: 0
-  Y: 34
+  Y: 0

@@ -28,7 +28,7 @@ FlexivAmrWheelOdom::FlexivAmrWheelOdom()
     input_topic_ = declare_parameter<std::string>("input_topic", "/flexiv/amr/sensor/encoder/raw");
     odom_topic_ = declare_parameter<std::string>("odom_topic", "/wheel_odom");
     odom_frame_id_ = declare_parameter<std::string>("odom_frame_id", "odom");
-    base_frame_id_ = declare_parameter<std::string>("base_frame_id", "AMR");
+    base_frame_id_ = declare_parameter<std::string>("base_frame_id", "base_link");
     left_encoder_index_ = declare_parameter<int>("left_encoder_index", 0);
     right_encoder_index_ = declare_parameter<int>("right_encoder_index", 1);
     left_pulses_per_meter_ = declare_parameter<double>("left_pulses_per_meter", 1.0);

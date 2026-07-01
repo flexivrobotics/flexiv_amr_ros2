@@ -1,5 +1,4 @@
 from pathlib import Path
-from xml.etree import ElementTree
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -12,36 +11,7 @@ PACKAGE_NAME = "flexiv_amr_description"
 
 ROBOTS = {
     "fmr_300": {
-        "urdf": Path("fmr_300") / "urdf" / "FMR300_and_Rizon10.urdf",
-        "mesh_package": "FMR300",
-        "arms": {"rizon10"},
-    },
-}
-
-ARM_ELEMENTS = {
-    "rizon10": {
-        "joints": {
-            "rizon10",
-            "joint1",
-            "joint2",
-            "joint3",
-            "joint4",
-            "joint5",
-            "joint6",
-            "joint7",
-            "link7_to_flange",
-        },
-        "links": {
-            "base_link",
-            "link1",
-            "link2",
-            "link3",
-            "link4",
-            "link5",
-            "link6",
-            "link7",
-            "flange",
-        },
+        "urdf": Path("fmr_300") / "urdf" / "FMR300.urdf",
     },
 }
 
@@ -76,42 +46,18 @@ def _load_config(config_file):
     return config
 
 
-def _remove_named_elements(root, tag, names):
-    for element in list(root.findall(tag)):
-        if element.get("name") in names:
-            root.remove(element)
-
-
 def _build_robot_description(config_file):
     package_share = Path(get_package_share_directory(PACKAGE_NAME))
     config = _load_config(config_file)
 
     mobile_base = config.get("mobile_base", "fmr_300")
-    arm = config.get("arm", "rizon10")
-    show_arm = bool(config.get("show_arm", True))
 
     if mobile_base not in ROBOTS:
         raise RuntimeError(f"Unsupported mobile_base '{mobile_base}'")
-    if show_arm and arm not in ROBOTS[mobile_base]["arms"]:
-        raise RuntimeError(f"Unsupported arm '{arm}' for mobile_base '{mobile_base}'")
 
     robot_info = ROBOTS[mobile_base]
     urdf_path = package_share / robot_info["urdf"]
-    xml_text = urdf_path.read_text(encoding="utf-8")
-    xml_text = xml_text.replace(
-        f"package://{robot_info['mesh_package']}/",
-        f"package://{PACKAGE_NAME}/{mobile_base}/",
-    )
-
-    if show_arm:
-        return xml_text
-
-    root = ElementTree.fromstring(xml_text)
-    arm_info = ARM_ELEMENTS.get(arm)
-    if arm_info is not None:
-        _remove_named_elements(root, "joint", arm_info["joints"])
-        _remove_named_elements(root, "link", arm_info["links"])
-    return ElementTree.tostring(root, encoding="unicode")
+    return urdf_path.read_text(encoding="utf-8")
 
 
 def _launch_setup(context, *args, **kwargs):

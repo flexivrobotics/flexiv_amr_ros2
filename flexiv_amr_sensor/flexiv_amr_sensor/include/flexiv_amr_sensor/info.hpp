@@ -26,7 +26,7 @@ class Info
 {
 public:
     explicit Info(rclcpp::Node& node)
-    : config_(DeclareSensorConfig(node, "amr_info", "/flexiv/amr/info", "AMR", 1.0))
+    : config_(DeclareSensorConfig(node, "amr_info", "/flexiv/amr/info", "base_link", 1.0))
     {
         if (config_.enable) {
             publisher_ = node.create_publisher<flexiv_amr_msgs::msg::AmrInfo>(

@@ -26,7 +26,7 @@ class Pose
 {
 public:
     explicit Pose(rclcpp::Node& node)
-    : config_(DeclareSensorConfig(node, "amr_pose", "/flexiv/amr/pose", "AMR", 5.0))
+    : config_(DeclareSensorConfig(node, "amr_pose", "/flexiv/amr/pose", "base_link", 5.0))
     {
         if (config_.enable) {
             publisher_ = node.create_publisher<flexiv_amr_msgs::msg::AmrPose>(

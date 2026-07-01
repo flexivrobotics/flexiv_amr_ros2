@@ -28,7 +28,7 @@ class Ultrasonic
 public:
     explicit Ultrasonic(rclcpp::Node& node)
     : config_(DeclareSensorConfig(
-        node, "amr_ultrasonic", "/flexiv/amr/sensor/ultrasonic/raw", "AMR", 5.0))
+        node, "amr_ultrasonic", "/flexiv/amr/sensor/ultrasonic/raw", "base_link", 5.0))
     {
         if (config_.enable) {
             publisher_ = node.create_publisher<flexiv_amr_msgs::msg::AmrUltrasonic>(

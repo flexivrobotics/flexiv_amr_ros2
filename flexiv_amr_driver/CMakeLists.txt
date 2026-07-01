@@ -26,7 +26,7 @@ ament_auto_find_build_dependencies(REQUIRED
 
 ament_auto_add_executable(flexiv_amr_driver_node src/flexiv_amr_driver_node.cpp)
 target_compile_features(flexiv_amr_driver_node PRIVATE cxx_std_17)
-target_link_libraries(flexiv_amr_driver_node flexiv::amr)
+target_link_libraries(flexiv_amr_driver_node flexiv::flexiv_amr)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

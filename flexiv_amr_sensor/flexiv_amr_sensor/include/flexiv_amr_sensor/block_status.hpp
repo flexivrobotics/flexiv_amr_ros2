@@ -26,7 +26,7 @@ class BlockStatus
 {
 public:
     explicit BlockStatus(rclcpp::Node& node)
-    : config_(DeclareSensorConfig(node, "amr_block_status", "/flexiv/amr/block/status", "AMR", 1.0))
+    : config_(DeclareSensorConfig(node, "amr_block_status", "/flexiv/amr/block/status", "base_link", 1.0))
     {
         if (config_.enable) {
             publisher_ = node.create_publisher<flexiv_amr_msgs::msg::AmrBlockStatus>(

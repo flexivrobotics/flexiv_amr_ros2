@@ -26,7 +26,7 @@ class Speed
 {
 public:
     explicit Speed(rclcpp::Node& node)
-    : config_(DeclareSensorConfig(node, "amr_speed", "/flexiv/amr/speed", "AMR", 10.0))
+    : config_(DeclareSensorConfig(node, "amr_speed", "/flexiv/amr/speed", "base_link", 10.0))
     {
         if (config_.enable) {
             publisher_ = node.create_publisher<flexiv_amr_msgs::msg::AmrSpeed>(

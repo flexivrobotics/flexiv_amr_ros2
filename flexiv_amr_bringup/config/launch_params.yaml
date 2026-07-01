@@ -1,7 +1,3 @@
 amr_ip: 192.168.192.5
 
 mobile_base: fmr_300
-
-arm: rizon10
-
-show_arm: true

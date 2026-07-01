@@ -3,7 +3,7 @@ flexiv_amr_wheel_odom:
     input_topic: /flexiv/amr/sensor/encoder/raw
     odom_topic: /wheel_odom
     odom_frame_id: odom
-    base_frame_id: AMR
+    base_frame_id: base_link
 
     # Indexes in flexiv_amr_msgs/msg/AmrEncoder.legacy_encoder_pulses.
     left_encoder_index: 0

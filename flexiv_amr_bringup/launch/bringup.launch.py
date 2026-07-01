@@ -85,7 +85,7 @@ def generate_launch_description() -> LaunchDescription:
         name="pointcloud_to_laserscan",
         parameters=[
             {
-                "target_frame": "AMR",
+                "target_frame": "base_link",
                 "transform_tolerance": 0.01,
                 "min_height": -10.0,
                 "max_height": 10.0,

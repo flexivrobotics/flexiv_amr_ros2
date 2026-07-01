@@ -26,7 +26,7 @@ class Battery
 {
 public:
     explicit Battery(rclcpp::Node& node)
-    : config_(DeclareSensorConfig(node, "amr_battery", "/flexiv/amr/battery/status", "AMR", 1.0))
+    : config_(DeclareSensorConfig(node, "amr_battery", "/flexiv/amr/battery/status", "base_link", 1.0))
     {
         if (config_.enable) {
             publisher_ = node.create_publisher<flexiv_amr_msgs::msg::AmrBattery>(

@@ -14,9 +14,8 @@
 
 #pragma once
 
-#include <flexiv/amr/vendor/seer/seer_amr.h>
-
 #include <chrono>
+#include <flexiv/amr/vendor/seer/seer_amr.h>
 #include <flexiv_amr_msgs/msg/amr_local_motion.hpp>
 #include <flexiv_amr_msgs/srv/amr_emergency_stop.hpp>
 #include <flexiv_amr_msgs/srv/amr_stop_open_loop_motion.hpp>

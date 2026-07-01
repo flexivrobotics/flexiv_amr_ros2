@@ -1,0 +1,8 @@
+.vscode/
+build/
+install/
+log/
+.cache/
+__pycache__/
+.ruff_cache/
+.agents/
