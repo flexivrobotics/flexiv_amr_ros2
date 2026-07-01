@@ -1,0 +1,80 @@
+amr_lidar:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/sensor/lidar/point
+    frame_id: AMR
+    publish_rate: 10.0
+    angle_unit: auto
+    distance_scale: 1.0
+
+amr_imu:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/sensor/imu/raw
+    frame_id: imu_link
+    publish_rate: 10.0
+
+amr_encoder:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/sensor/encoder/raw
+    frame_id: AMR
+    publish_rate: 5.0
+
+amr_ultrasonic:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/sensor/ultrasonic/raw
+    frame_id: AMR
+    publish_rate: 5.0
+
+
+amr_sensor_info:
+  ros__parameters:
+    enable: false
+    topic: /flexiv/amr/sensor/info
+    publish_rate: 1.0
+
+
+amr_speed:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/speed
+    frame_id: AMR
+    publish_rate: 10.0
+
+amr_battery:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/battery/status
+    frame_id: AMR
+    publish_rate: 1.0
+
+amr_pose:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/pose
+    frame_id: AMR
+    publish_rate: 5.0
+
+amr_info:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/info
+    frame_id: AMR
+    publish_rate: 1.0
+
+amr_run_info:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/run_info
+    frame_id: AMR
+    publish_rate: 1.0
+
+
+amr_block_status:
+  ros__parameters:
+    enable: true
+    topic: /flexiv/amr/block/status
+    frame_id: AMR
+    publish_rate: 1.0

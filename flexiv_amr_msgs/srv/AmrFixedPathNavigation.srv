@@ -1,0 +1,24 @@
+string source_id
+string target_id
+string task_id
+
+bool use_angle
+float64 angle
+string method
+bool use_max_speed
+float64 max_speed
+bool use_max_wspeed
+float64 max_wspeed
+bool use_max_acc
+float64 max_acc
+bool use_max_wacc
+float64 max_wacc
+bool use_duration
+float64 duration
+bool use_orientation
+float64 orientation
+bool use_spin
+bool spin
+---
+bool success
+string message

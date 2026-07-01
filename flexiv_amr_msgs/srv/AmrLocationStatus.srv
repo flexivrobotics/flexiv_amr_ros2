@@ -1,0 +1,6 @@
+---
+bool success
+string message
+
+# Raw SEER relocation/localization status code from API 1021.
+int32 reloc_status

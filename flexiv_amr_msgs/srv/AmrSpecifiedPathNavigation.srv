@@ -1,0 +1,24 @@
+string[] source_ids
+string[] target_ids
+string[] task_ids
+
+bool[] use_angles
+float64[] angles
+string[] methods
+bool[] use_max_speeds
+float64[] max_speeds
+bool[] use_max_wspeeds
+float64[] max_wspeeds
+bool[] use_max_accs
+float64[] max_accs
+bool[] use_max_waccs
+float64[] max_waccs
+bool[] use_durations
+float64[] durations
+bool[] use_orientations
+float64[] orientations
+bool[] use_spins
+bool[] spins
+---
+bool success
+string message

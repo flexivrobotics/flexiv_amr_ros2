@@ -1,0 +1,9 @@
+---
+bool success
+string message
+
+int32 task_status
+int32 task_type
+string target_id
+string[] finished_path
+string[] unfinished_path

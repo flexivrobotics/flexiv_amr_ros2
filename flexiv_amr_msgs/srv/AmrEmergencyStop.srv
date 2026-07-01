@@ -1,0 +1,6 @@
+# Set true to output the software emergency-stop signal.
+# Set false to release the software emergency-stop signal.
+bool status
+---
+bool success
+string message

@@ -1,0 +1,14 @@
+---
+bool success
+string message
+
+float64 percentage
+float64 distance
+string closest_target
+string source_name
+string target_name
+string info
+
+string[] task_ids
+int32[] statuses
+int32[] types

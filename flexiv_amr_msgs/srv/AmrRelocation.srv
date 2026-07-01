@@ -1,0 +1,18 @@
+# Set true to request automatic relocation. When true, the AMR ignores all other request fields.
+bool is_auto
+
+# Set true to relocate at the configured RobotHome. In this mode x, y, and angle are ignored.
+bool home
+
+# Manual relocation pose in the world frame. x and y are required when is_auto is false.
+float64 x
+float64 y
+bool use_angle
+float64 angle
+
+# Optional relocation search radius in meters.
+bool use_length
+float64 length
+---
+bool success
+string message

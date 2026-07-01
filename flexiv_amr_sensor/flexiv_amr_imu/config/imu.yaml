@@ -1,0 +1,23 @@
+flexiv_amr_imu:
+  ros__parameters:
+    raw_imu_topic: /flexiv/amr/sensor/imu/raw
+    imu_topic: /imu
+
+    subtract_angular_velocity_offset: true
+    raw_to_imu_rpy: [0.0, -1.5707963267948966, 0.0]
+
+    orientation_covariance: [
+      0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0
+    ]
+    angular_velocity_covariance: [
+      0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0
+    ]
+    linear_acceleration_covariance: [
+      0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0
+    ]

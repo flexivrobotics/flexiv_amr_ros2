@@ -1,0 +1,21 @@
+flexiv_amr_wheel_odom:
+  ros__parameters:
+    input_topic: /flexiv/amr/sensor/encoder/raw
+    odom_topic: /wheel_odom
+    odom_frame_id: odom
+    base_frame_id: AMR
+
+    # Indexes in flexiv_amr_msgs/msg/AmrEncoder.legacy_encoder_pulses.
+    left_encoder_index: 0
+    right_encoder_index: 1
+
+    # Encoder pulse counts per meter.
+    left_pulses_per_meter: 2081494.5
+    right_pulses_per_meter: 2081494.5
+
+    # Distance between left and right driving wheels, in meters.
+    wheel_separation: 0.5716
+
+    # Set to -1.0 if a wheel encoder increases while that side moves backward.
+    left_direction: 1.0
+    right_direction: 1.0

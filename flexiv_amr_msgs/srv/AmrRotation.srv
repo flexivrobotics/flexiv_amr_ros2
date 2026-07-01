@@ -1,0 +1,6 @@
+float64 angle
+float64 vw
+int32 mode
+---
+bool success
+string message

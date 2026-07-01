@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="FMR300">
+  <link
+    name="AMR">
+    <inertial>
+      <origin
+        xyz="-0.0023024 -0.0018183 0.46843"
+        rpy="0 0 0" />
+      <mass
+        value="250" />
+      <inertia
+        ixx="0.88449"
+        ixy="0.00017542"
+        ixz="0.022848"
+        iyy="1.325"
+        iyz="-0.00040944"
+        izz="1.5047" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/AMR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/AMR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="driving_wheel">
+    <inertial>
+      <origin
+        xyz="-9.06764386117281E-05 -0.0493227062820876 9.13568922948915E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.26057772812278" />
+      <inertia
+        ixx="0.00196878456779204"
+        ixy="1.53979747484883E-06"
+        ixz="-3.46336856758748E-06"
+        iyy="0.00374520796334388"
+        iyz="1.3364373891923E-06"
+        izz="0.00217238949226521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/driving_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/driving_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="driving_wheel1"
+    type="continuous">
+    <origin
+      xyz="0 0.2858 0.0825"
+      rpy="0 0 0" />
+    <parent
+      link="AMR" />
+    <child
+      link="driving_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="driving_wheel2">
+    <inertial>
+      <origin
+        xyz="9.06764996809126E-05 0.0493227062820689 9.13568197185022E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.26057772812207" />
+      <inertia
+        ixx="0.00196878456870053"
+        ixy="1.53979744375E-06"
+        ixz="3.46336455849254E-06"
+        iyy="0.00374520796334207"
+        iyz="-1.3364373560009E-06"
+        izz="0.00217238949135589" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/driving_wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/driving_wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="driving_wheel2"
+    type="continuous">
+    <origin
+      xyz="0 -0.2858 0.0825"
+      rpy="0 0 0" />
+    <parent
+      link="AMR" />
+    <child
+      link="driving_wheel2" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="universal_wheel1">
+    <inertial>
+      <origin
+        xyz="-0.0010879795287409 0.00388696244652245 -0.0176393476865022"
+        rpy="0 0 0" />
+      <mass
+        value="0.0818891380703348" />
+      <inertia
+        ixx="5.91872581994778E-05"
+        ixy="-2.84487323932676E-06"
+        ixz="-3.07938914915051E-06"
+        iyy="7.1064823969666E-05"
+        iyz="1.07932761271879E-05"
+        izz="6.62650018504877E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel1"
+    type="continuous">
+    <origin
+      xyz="-0.287 0.209 0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="AMR" />
+    <child
+      link="universal_wheel1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="universal_wheel11">
+    <inertial>
+      <origin
+        xyz="0.0257395931351377 -3.44713817601594E-07 -7.29269674626387E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.164828810163177" />
+      <inertia
+        ixx="0.00011565297044345"
+        ixy="3.49981437992013E-12"
+        ixz="-1.37274836403732E-11"
+        iyy="6.43246519295217E-05"
+        iyz="1.72863122497719E-11"
+        izz="6.43235182017835E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel11"
+    type="continuous">
+    <origin
+      xyz="-0.029728 0.01338 -0.0564"
+      rpy="0 0 0.23754" />
+    <parent
+      link="universal_wheel1" />
+    <child
+      link="universal_wheel11" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="universal_wheel2">
+    <inertial>
+      <origin
+        xyz="0.0010879795287409 -0.00388696244652265 -0.0176393476865022"
+        rpy="0 0 0" />
+      <mass
+        value="0.081889138070335" />
+      <inertia
+        ixx="5.91872581994779E-05"
+        ixy="-2.84487323932687E-06"
+        ixz="3.07938914915037E-06"
+        iyy="7.10648239696664E-05"
+        iyz="-1.07932761271881E-05"
+        izz="6.62650018504879E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel2"
+    type="continuous">
+    <origin
+      xyz="-0.287 -0.209 0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="AMR" />
+    <child
+      link="universal_wheel2" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="universal_wheel22">
+    <inertial>
+      <origin
+        xyz="0.0257395931351379 -3.44713817546083E-07 -7.29269674581978E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.164828810163178" />
+      <inertia
+        ixx="0.00011565297044345"
+        ixy="3.49981446208232E-12"
+        ixz="-1.37274836147788E-11"
+        iyy="6.43246519295217E-05"
+        iyz="1.72863120559384E-11"
+        izz="6.43235182017836E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel22"
+    type="continuous">
+    <origin
+      xyz="0.0297283654014721 -0.0133801836891925 -0.0564"
+      rpy="0 0 -2.90404949909861" />
+    <parent
+      link="universal_wheel2" />
+    <child
+      link="universal_wheel22" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="universal_wheel3">
+    <inertial>
+      <origin
+        xyz="-0.00388696244652256 -0.00108797952874101 -0.0176393476865018"
+        rpy="0 0 0" />
+      <mass
+        value="0.0818891380703349" />
+      <inertia
+        ixx="7.10648239696663E-05"
+        ixy="2.84487323932669E-06"
+        ixz="-1.07932761271881E-05"
+        iyy="5.91872581994777E-05"
+        iyz="-3.07938914915032E-06"
+        izz="6.62650018504876E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel3"
+    type="continuous">
+    <origin
+      xyz="0.2535 -0.178 0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="AMR" />
+    <child
+      link="universal_wheel3" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="universal_wheel33">
+    <inertial>
+      <origin
+        xyz="0.0257395931351377 -3.44713817490572E-07 -7.29269674604183E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.164828810163178" />
+      <inertia
+        ixx="0.000115652970443451"
+        ixy="3.49981439262562E-12"
+        ixz="-1.37274836688913E-11"
+        iyy="6.43246519295222E-05"
+        iyz="1.72863121061089E-11"
+        izz="6.43235182017836E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel33.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel33.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel33"
+    type="continuous">
+    <origin
+      xyz="-0.0133801836891926 -0.029728365401472 -0.0564"
+      rpy="0 0 1.80833948128608" />
+    <parent
+      link="universal_wheel3" />
+    <child
+      link="universal_wheel33" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="universal_wheel4">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel4"
+    type="continuous">
+    <origin
+      xyz="0.2535 0.178 0.0945"
+      rpy="0 0 0" />
+    <parent
+      link="AMR" />
+    <child
+      link="universal_wheel4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="universal_wheel44">
+    <inertial>
+      <origin
+        xyz="0.0257395931351378 -3.44713817546083E-07 -7.29269674626387E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.164828810163178" />
+      <inertia
+        ixx="0.00011565297044345"
+        ixy="3.49981433418034E-12"
+        ixz="-1.37274836381953E-11"
+        iyy="6.43246519295219E-05"
+        iyz="1.72863118968994E-11"
+        izz="6.43235182017836E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel44.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flexiv_amr_description/fmr_300/meshes/universal_wheel44.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="universal_wheel44"
+    type="continuous">
+    <origin
+      xyz="0.0133801836891926 0.0297283654014721 -0.0564"
+      rpy="0 0 -1.33325317230372" />
+    <parent
+      link="universal_wheel4" />
+    <child
+      link="universal_wheel44" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+  <link name="imu_link" />
+  <joint name="imu_joint" type="fixed">
+    <origin
+      xyz="0 0 0.2"
+      rpy="0 0 0" />
+    <parent
+      link="AMR" />
+    <child
+      link="imu_link" />
+  </joint>
+  <!-- 增加一个 joint 连接机器人和 AMR -->
+  <joint name="rizon10" type="fixed" >
+    <parent link="AMR" />
+    <child link="base_link" />
+    <origin rpy="0.0 0.0 3.141592653589793" xyz="0.26 0.0 0.874" />
+  </joint>
+
+  <!-- 这里是 Rizon10 -->
+  <joint name="joint1" type="revolute">
+    <parent link="base_link" />
+    <child link="link1" />
+    <origin rpy="0.0 0.0 -3.141592653589793" xyz="0.0 0.0 0.21" />
+    <axis xyz="0 0 1" />
+    <limit effort="261" lower="-2.7925" upper="2.7925" velocity="1.7453" />
+  </joint>
+  <joint name="joint2" type="revolute">
+    <parent link="link1" />
+    <child link="link2" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0675 0.24" />
+    <axis xyz="0 1 0" />
+    <limit effort="261" lower="-2.6704" upper="2.6704" velocity="1.7453" />
+  </joint>
+  <joint name="joint3" type="revolute">
+    <parent link="link2" />
+    <child link="link3" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0625 0.2275" />
+    <axis xyz="0 0 1" />
+    <limit effort="123" lower="-2.7925" upper="2.7925" velocity="2.0944" />
+  </joint>
+  <joint name="joint4" type="revolute">
+    <parent link="link3" />
+    <child link="link4" />
+    <origin rpy="0.0 0.0 -3.141592653589793" xyz="0.0 -0.0625 0.2225" />
+    <axis xyz="0 1 0" />
+    <limit effort="123" lower="-2.7053" upper="2.7053" velocity="2.0944" />
+  </joint>
+  <joint name="joint5" type="revolute">
+    <parent link="link4" />
+    <child link="link5" />
+    <origin rpy="0.0 0.0 -3.141592653589793" xyz="0.0 0.0575 0.205" />
+    <axis xyz="0 0 1" />
+    <limit effort="57" lower="-2.9671" upper="2.9671" velocity="3.8397" />
+  </joint>
+  <joint name="joint6" type="revolute">
+    <parent link="link5" />
+    <child link="link6" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.03 0.19" />
+    <axis xyz="0 1 0" />
+    <limit effort="57" lower="-1.3963" upper="4.5379" velocity="3.8397" />
+  </joint>
+  <joint name="joint7" type="revolute">
+    <parent link="link6" />
+    <child link="link7" />
+    <origin rpy="0.0 -1.5707963478683205 0.0" xyz="-0.015 0.073 0.11" />
+    <axis xyz="0 0 1" />
+    <limit effort="57" lower="-2.9671" upper="2.9671" velocity="3.8397" />
+  </joint>
+  <joint name="link7_to_flange" type="fixed">
+    <parent link="link7" />
+    <child link="flange" />
+    <origin rpy="0.0 0.0 -3.141592653589793" xyz="0.0 0.0 0.081" />
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <mass value="9.2" />
+      <origin rpy="0 0 0" xyz="0.0 -0.0 0.13" />
+      <inertia ixx="0.08" ixy="0.0" ixz="-0.0" iyy="0.08" iyz="0.0" izz="0.04" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link0.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link0.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link1">
+    <inertial>
+      <mass value="9.7" />
+      <origin rpy="0 0 0" xyz="0.0 0.03 0.16" />
+      <inertia ixx="0.18" ixy="0.0" ixz="0.0" iyy="0.17" iyz="0.02" izz="0.04" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link1.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <visual name="ring">
+      <origin rpy="0 0 0" xyz="0 0 -0.0025" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/ring.obj" scale="0.079 0.079 0.002" />
+      </geometry>
+      <material name="rizon_white" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link2">
+    <inertial>
+      <mass value="6.2" />
+      <origin rpy="0 0 0" xyz="0.0 0.03 0.11" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.08" iyz="0.02" izz="0.03" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link2.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <visual name="ring">
+      <origin rpy="1.5707963 0 0" xyz="0 -0.0025 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/ring.obj" scale="0.079 0.079 0.002" />
+      </geometry>
+      <material name="rizon_white" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link3">
+    <inertial>
+      <mass value="4.6" />
+      <origin rpy="0 0 0" xyz="0.0 -0.03 0.17" />
+      <inertia ixx="0.04" ixy="-0.0" ixz="-0.0" iyy="0.03" iyz="-0.01" izz="0.01" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link3.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <visual name="ring">
+      <origin rpy="0 0 0" xyz="0 0 -0.0025" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/ring.obj" scale="0.062 0.062 0.002" />
+      </geometry>
+      <material name="rizon_white" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link4">
+    <inertial>
+      <mass value="3.0" />
+      <origin rpy="0 0 0" xyz="-0.0 0.05 0.1" />
+      <inertia ixx="0.03" ixy="0.0" ixz="-0.0" iyy="0.03" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link4.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <visual name="ring">
+      <origin rpy="1.5707963 0 0" xyz="0 -0.0025 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/ring.obj" scale="0.062 0.062 0.002" />
+      </geometry>
+      <material name="rizon_white" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link5">
+    <inertial>
+      <mass value="2.4" />
+      <origin rpy="0 0 0" xyz="0.0 0.01 0.13" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link5.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <visual name="ring">
+      <origin rpy="0 0 0" xyz="0 0 -0.0025" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/ring.obj" scale="0.051 0.051 0.002" />
+      </geometry>
+      <material name="rizon_white" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link6">
+    <inertial>
+      <mass value="2.3" />
+      <origin rpy="0 0 0" xyz="0.02 0.06 0.07" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link6.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <visual name="ring">
+      <origin rpy="1.5707963 0 0" xyz="0 -0.0025 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/ring.obj" scale="0.051 0.051 0.002" />
+      </geometry>
+      <material name="rizon_white" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link7">
+    <inertial>
+      <mass value="0.9" />
+      <origin rpy="0 0 0" xyz="0.0 -0.0 0.03" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual name="shell">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/link7.obj" />
+      </geometry>
+      <material name="rizon_dark_grey" />
+    </visual>
+    <visual name="ring">
+      <origin rpy="0 0 0" xyz="0 0 -0.0025" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/visual/ring.obj" scale="0.051 0.051 0.002" />
+      </geometry>
+      <material name="rizon_white" />
+    </visual>
+    <collision name="hull">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/fmr_300/meshes/rizon10/collision/link7.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="flange" />
+
+  <material name="rizon_light_grey">
+    <color rgba="0.7 0.7 0.7 1.0" />
+  </material>
+  <material name="rizon_dark_grey">
+    <color rgba="0.4 0.4 0.4 1.0" />
+  </material>
+  <material name="rizon_white">
+    <color rgba="1.0 1.0 1.0 1.0" />
+  </material>
+
+</robot>

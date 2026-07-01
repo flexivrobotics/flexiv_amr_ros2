@@ -1,0 +1,5 @@
+std_msgs/Header header
+geometry_msgs/Vector3 euler_rad
+geometry_msgs/Vector3 acceleration_adc
+geometry_msgs/Vector3 angular_velocity_adc
+geometry_msgs/Vector3 angular_velocity_offset_adc
