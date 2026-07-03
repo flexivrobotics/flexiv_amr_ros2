@@ -1,0 +1,103 @@
+name: Humble Binary Build
+
+on:
+  push:
+    branches:
+      - humble
+  pull_request:
+    branches:
+      - humble
+
+jobs:
+  humble_binary:
+    name: Humble binary job
+    runs-on: ubuntu-22.04
+    container:
+      image: osrf/ros:humble-desktop
+    env:
+      ROS_DISTRO: humble
+      AMR_SDK_PREFIX: ${{ github.workspace }}/flexiv_amr_sdk_install
+      AMR_SDK_REPOSITORY: https://github.com/zlin-flexiv/flexiv_amr_sdk.git
+      AMR_SDK_SOURCE_DIR: /tmp/flexiv_amr_sdk
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install system and ROS dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            build-essential \
+            cmake \
+            git \
+            libasio-dev \
+            libeigen3-dev \
+            libspdlog-dev \
+            nlohmann-json3-dev \
+            python3-colcon-common-extensions \
+            python3-rosdep \
+            python3-yaml \
+            ros-humble-joint-state-publisher \
+            ros-humble-joint-state-publisher-gui \
+            ros-humble-pointcloud-to-laserscan \
+            ros-humble-robot-localization \
+            ros-humble-robot-state-publisher \
+            ros-humble-rviz2 \
+            ros-humble-urdfdom \
+            ros-humble-xacro
+
+      - name: Build and install flexiv_amr_sdk
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git clone --depth 1 "${AMR_SDK_REPOSITORY}" "${AMR_SDK_SOURCE_DIR}"
+          cmake -S "${AMR_SDK_SOURCE_DIR}" -B "${AMR_SDK_SOURCE_DIR}/build" \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX="${AMR_SDK_PREFIX}"
+          cmake --build "${AMR_SDK_SOURCE_DIR}/build" --target install --config Release --parallel 2
+
+      - name: Verify flexiv_amr_sdk install
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f "${AMR_SDK_PREFIX}/lib/cmake/flexiv_amr_sdk/flexiv_amr_sdk-config.cmake"
+
+      - name: Install ROS package dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          source "/opt/ros/${ROS_DISTRO}/setup.bash"
+          rosdep update
+          rosdep install --from-paths . --ignore-src --skip-keys flexiv_amr_sdk \
+            --rosdistro "${ROS_DISTRO}" -r -y
+
+      - name: Build AMR ROS 2 workspace
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          source "/opt/ros/${ROS_DISTRO}/setup.bash"
+          colcon build --event-handlers console_direct+ \
+            --cmake-args -DCMAKE_PREFIX_PATH="${AMR_SDK_PREFIX}"
+
+      - name: Validate robot description and launch files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          source "/opt/ros/${ROS_DISTRO}/setup.bash"
+          source install/setup.bash
+          check_urdf flexiv_amr_description/FMR300/FMR300.urdf
+          python3 -m py_compile \
+            flexiv_amr_description/launch/display.launch.py \
+            flexiv_amr_bringup/launch/bringup.launch.py \
+            flexiv_amr_driver/launch/driver.launch.py \
+            flexiv_amr_navigation/launch/navigation.launch.py \
+            flexiv_amr_sensor/flexiv_amr_sensor/launch/sensor.launch.py

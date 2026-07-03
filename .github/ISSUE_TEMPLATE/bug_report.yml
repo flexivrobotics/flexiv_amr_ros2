@@ -1,0 +1,168 @@
+name: Bug Report
+description: Report a reproducible Flexiv AMR ROS 2 issue
+title: "[Bug]: "
+labels: ["bug"]
+
+body:
+  - type: input
+    id: version
+    attributes:
+      label: ROS 2 package version
+      description: Provide the release version, branch name, tag, or commit hash you are using.
+      placeholder: "Example: v0.1.2 / humble@abcdef1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ros-distro
+    attributes:
+      label: ROS 2 distribution
+      description: Select the ROS 2 distribution where the issue occurs.
+      multiple: true
+      options:
+        - Foxy
+        - Humble
+        - Jazzy
+        - Rolling
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-package
+    attributes:
+      label: Affected package or area
+      description: Select all areas related to the issue.
+      multiple: true
+      options:
+        - flexiv_amr_bringup
+        - flexiv_amr_description
+        - flexiv_amr_driver
+        - flexiv_amr_navigation
+        - flexiv_amr_sensor
+        - flexiv_amr_imu
+        - flexiv_amr_wheel_odom
+        - flexiv_amr_msgs
+        - Launch files or configuration
+        - TF, URDF, or RViz
+        - EKF, odometry, or localization
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Select the platform where the issue occurs.
+      multiple: true
+      options:
+        - Ubuntu 24.04 x86_64
+        - Ubuntu 22.04 x86_64
+        - Ubuntu 20.04 x86_64
+        - Linux aarch64
+        - Docker
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Build and runtime environment
+      description: Include build type, installation method, dependency versions, and relevant ROS 2 packages.
+      placeholder: |
+        - Install method: source build / binary package / Docker
+        - Compiler: GCC 11.4
+        - CMake: 3.22.1
+        - colcon: 0.x
+        - flexiv_amr_sdk version:
+        - robot_localization version, if relevant:
+        - pointcloud_to_laserscan version, if relevant:
+    validations:
+      required: true
+
+  - type: textarea
+    id: amr-context
+    attributes:
+      label: AMR and network context
+      description: Provide AMR backend, controller version, connection mode, and network setup. Do not include credentials or secrets.
+      placeholder: |
+        - AMR vendor/backend: SEER / Flexiv / other
+        - Controller software version:
+        - Real AMR or simulator:
+        - AMR IP/network setup:
+        - API or workflow involved: sensor / driver / navigation / relocation / motion / map / task
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue description
+      description: Describe what happened and how it affects normal ROS 2 usage.
+      placeholder: "Example: bringup.launch.py starts, but robot_state_publisher cannot load the mesh resource."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide commands or operations that reproduce the issue. If it is intermittent, describe the frequency.
+      placeholder: |
+        1. Source ROS 2 and the workspace.
+        2. Build with ...
+        3. Run ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe the result you expected.
+      placeholder: "Example: The launch file should start all nodes and publish a valid odom -> base_link transform."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, errors, or stack traces
+      description: Paste relevant logs or upload log files. Remove tokens, credentials, IP-sensitive details, and private data.
+      render: shell
+      placeholder: "Paste terminal output, colcon errors, ros2 launch logs, or stack traces here."
+
+  - type: textarea
+    id: minimal-repro
+    attributes:
+      label: Minimal command, launch, or configuration
+      description: Provide the smallest command, launch snippet, YAML parameter file, or message example that reproduces the issue.
+      placeholder: |
+        ```bash
+        ros2 launch ...
+        ```
+
+        ```yaml
+        # Relevant parameters
+        ```
+
+  - type: dropdown
+    id: safety-impact
+    attributes:
+      label: Safety impact
+      description: Does this issue affect robot motion, navigation, emergency stop, or other safety-critical behavior?
+      options:
+        - "No"
+        - "Yes"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add screenshots, rosbag details, TF trees, RViz screenshots, related issues, workaround details, or any other useful information.
+      placeholder: "Additional context"
