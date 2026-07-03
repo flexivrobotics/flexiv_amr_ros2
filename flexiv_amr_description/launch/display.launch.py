@@ -10,8 +10,8 @@ from launch_ros.actions import Node
 PACKAGE_NAME = "flexiv_amr_description"
 
 ROBOTS = {
-    "fmr_300": {
-        "urdf": Path("fmr_300") / "urdf" / "FMR300.urdf",
+    "FMR300": {
+        "urdf": Path("FMR300") / "FMR300.urdf",
     },
 }
 
@@ -50,7 +50,7 @@ def _build_robot_description(config_file):
     package_share = Path(get_package_share_directory(PACKAGE_NAME))
     config = _load_config(config_file)
 
-    mobile_base = config.get("mobile_base", "fmr_300")
+    mobile_base = config.get("mobile_base", "FMR300")
 
     if mobile_base not in ROBOTS:
         raise RuntimeError(f"Unsupported mobile_base '{mobile_base}'")

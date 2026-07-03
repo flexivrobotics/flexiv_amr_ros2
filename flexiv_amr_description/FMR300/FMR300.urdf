@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="FMR300">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0039156 0.0067656 0.48765" rpy="0 0 0" />
+      <mass value="20.137" />
+      <inertia ixx="2.5956" ixy="0.057513" ixz="0.089018" iyy="3.2257" iyz="-0.025621" izz="2.1585" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Left_wheel_Link">
+    <inertial>
+      <origin xyz="-9.0677E-05 -9.1347E-05 -0.049273" rpy="0 0 0" />
+      <mass value="1.2606" />
+      <inertia ixx="0.0019688" ixy="3.4608E-06" ixz="1.5399E-06" iyy="0.0021724" iyz="-1.3364E-06" izz="0.0037452" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/Left_wheel_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/Left_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Left_wheel" type="continuous">
+    <origin xyz="0 0.28575 0.0825" rpy="-1.5708 0 0" />
+    <parent link="base_link" />
+    <child link="Left_wheel_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="400" velocity="2" />
+  </joint>
+  <link name="Right_wheel_Link">
+    <inertial>
+      <origin xyz="9.0677E-05 -9.1347E-05 0.049323" rpy="0 0 0" />
+      <mass value="1.2606" />
+      <inertia ixx="0.0019688" ixy="-3.4608E-06" ixz="1.5399E-06" iyy="0.0021724" iyz="1.3364E-06" izz="0.0037452" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/Right_wheel_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/Right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Right_wheel" type="continuous">
+    <origin xyz="0 -0.2858 0.0825" rpy="-1.5708 0 0" />
+    <parent link="base_link" />
+    <child link="Right_wheel_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0" effort="400" velocity="2" />
+  </joint>
+  <link name="Radar">
+    <inertial>
+      <origin xyz="-0.017462 0.0013026 -0.023132" rpy="0 0 0" />
+      <mass value="0.045867" />
+      <inertia ixx="1.6688E-05" ixy="2.6162E-08" ixz="1.7087E-07" iyy="1.6428E-05" iyz="-2.7622E-08" izz="2.2513E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/Radar.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.22353 0.22353 0.22353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/Radar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Radar" type="fixed">
+    <origin xyz="0.34978 0 0.2071" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Radar" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="0.072416 0.21674 0.10617" rpy="0 0 0" />
+      <mass value="20.137" />
+      <inertia ixx="2.5956" ixy="0.057513" ixz="0.089018" iyy="3.2257" iyz="-0.025621" izz="2.1585" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/IMU.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://flexiv_amr_description/FMR300/meshes/IMU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="-0.0685 -0.20997 0.38148" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>

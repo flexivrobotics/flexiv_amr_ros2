@@ -111,7 +111,7 @@ Configure the AMR IP address in [`flexiv_amr_bringup/config/launch_params.yaml`]
 
 ```yaml
 amr_ip: 192.168.192.5
-mobile_base: fmr_300
+mobile_base: FMR300
 ```
 
 The launch file to start the complete AMR stack is `bringup.launch.py`. It starts the AMR sensor node, driver node, navigation node, robot description, point-cloud conversion, wheel odometry, IMU conversion, EKF fusion, and RViz visualization.

@@ -5,8 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /TF1
         - /TF1/Frames1
-        - /PointCloud21
         - /PointCloud21/Topic1
         - /LaserScan1
       Splitter Ratio: 0.5
@@ -43,109 +43,36 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /robot_description
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        driving_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        driving_wheel2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        universal_wheel1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        universal_wheel11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        universal_wheel2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        universal_wheel22:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        universal_wheel3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        universal_wheel33:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        universal_wheel4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        universal_wheel44:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Mass Properties:
         Inertia: false
         Mass: false
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz_default_plugins/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        Left_wheel_Link:
+          Value: false
+        Radar:
+          Value: false
+        Right_wheel_Link:
+          Value: false
         base_link:
           Value: true
-        driving_wheel:
-          Value: false
-        driving_wheel2:
-          Value: false
         imu_link:
           Value: true
-        universal_wheel1:
-          Value: false
-        universal_wheel11:
-          Value: false
-        universal_wheel2:
-          Value: false
-        universal_wheel22:
-          Value: false
-        universal_wheel3:
-          Value: false
-        universal_wheel33:
-          Value: false
-        universal_wheel4:
-          Value: false
-        universal_wheel44:
-          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -153,24 +80,14 @@ Visualization Manager:
       Show Names: true
       Tree:
         base_link:
-          driving_wheel:
+          Left_wheel_Link:
             {}
-          driving_wheel2:
+          Radar:
+            {}
+          Right_wheel_Link:
             {}
           imu_link:
             {}
-          universal_wheel1:
-            universal_wheel11:
-              {}
-          universal_wheel2:
-            universal_wheel22:
-              {}
-          universal_wheel3:
-            universal_wheel33:
-              {}
-          universal_wheel4:
-            universal_wheel44:
-              {}
       Update Interval: 0
       Value: true
     - Alpha: 1

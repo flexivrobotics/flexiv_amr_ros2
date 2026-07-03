@@ -9,7 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 install(
-  DIRECTORY fmr_300 launch rviz
+  DIRECTORY FMR300 launch rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
