@@ -116,7 +116,9 @@ jobs:
         run: |
           set -euo pipefail
 
+          set +u
           source "/opt/ros/${ROS_DISTRO}/setup.bash"
+          set -u
           rosdep update
           rosdep install --from-paths . --ignore-src --skip-keys flexiv_amr_sdk \
             --rosdistro "${ROS_DISTRO}" -r -y
@@ -126,7 +128,9 @@ jobs:
         run: |
           set -euo pipefail
 
+          set +u
           source "/opt/ros/${ROS_DISTRO}/setup.bash"
+          set -u
           colcon build --event-handlers console_direct+ \
             --cmake-args -DCMAKE_PREFIX_PATH="${AMR_SDK_PREFIX}"
 
@@ -135,8 +139,10 @@ jobs:
         run: |
           set -euo pipefail
 
+          set +u
           source "/opt/ros/${ROS_DISTRO}/setup.bash"
           source install/setup.bash
+          set -u
           check_urdf flexiv_amr_description/FMR300/FMR300.urdf
           python3 -m py_compile \
             flexiv_amr_description/launch/display.launch.py \
