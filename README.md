@@ -3,11 +3,11 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![ROS 2](https://img.shields.io/badge/ROS%202-Humble%20Hawksbill-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html)
 
-For ROS 2 users to easily work with Flexiv Autonomous Mobile Robots (AMR), the APIs of [`flexiv_amr_sdk`](https://github.com/zlin-flexiv/flexiv_amr_sdk) are wrapped into ROS packages in `flexiv_amr_ros2`. Key functionalities like SEER TCP communication, raw sensor publishing, open-loop motion control, navigation and relocation services, wheel odometry, IMU conversion, `robot_localization` fusion, and RViz visualization are supported.
+For ROS 2 users to easily work with Flexiv Autonomous Mobile Robots (AMR), the APIs of [`flexiv_amr_sdk`](https://github.com/flexivrobotics/flexiv_amr_sdk) are wrapped into ROS packages in `flexiv_amr_ros2`. Key functionalities like SEER TCP communication, raw sensor publishing, open-loop motion control, navigation and relocation services, wheel odometry, IMU conversion, `robot_localization` fusion, and RViz visualization are supported.
 
 ## References
 
-[`flexiv_amr_sdk`](https://github.com/zlin-flexiv/flexiv_amr_sdk) provides the C++ interface to the AMR controller.
+[`flexiv_amr_sdk`](https://github.com/flexivrobotics/flexiv_amr_sdk) provides the C++ interface to the AMR controller.
 
 [ROS 2 Humble documentation](https://docs.ros.org/en/humble/index.html) provides the ROS 2 installation and development guides.
 
@@ -36,7 +36,7 @@ This project was developed for ROS 2 Humble on Ubuntu 22.04. Other versions of U
 
 ## Getting Started
 
-This project requires ROS 2 Humble and a built installation of [`flexiv_amr_sdk`](https://github.com/zlin-flexiv/flexiv_amr_sdk).
+This project requires ROS 2 Humble and a built installation of [`flexiv_amr_sdk`](https://github.com/flexivrobotics/flexiv_amr_sdk).
 
 1. Install [ROS 2 Humble via Debian Packages](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html).
 
@@ -60,8 +60,8 @@ This project requires ROS 2 Humble and a built installation of [`flexiv_amr_sdk`
    ```bash
    mkdir -p ~/flexiv_amr_ros2_ws/src
    cd ~/flexiv_amr_ros2_ws/src
-   git clone https://github.com/zlin-flexiv/flexiv_amr_sdk.git
-   git clone https://github.com/zlin-flexiv/flexiv_amr_ros2.git
+   git clone https://github.com/flexivrobotics/flexiv_amr_sdk.git
+   git clone https://github.com/flexivrobotics/flexiv_amr_ros2.git
    ```
 
 4. Build and install `flexiv_amr_sdk`.
