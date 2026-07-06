@@ -7,7 +7,7 @@ For ROS 2 users to easily work with Flexiv Autonomous Mobile Robots (AMR), the A
 
 ## References
 
-[`flexiv_amr_sdk`](https://github.com/flexivrobotics/flexiv_amr_sdk) provides the C++ interface to the AMR controller.
+[flexiv_amr_sdk](https://github.com/flexivrobotics/flexiv_amr_sdk) provides the C++ interface to the AMR controller.
 
 [ROS 2 Humble documentation](https://docs.ros.org/en/humble/index.html) provides the ROS 2 installation and development guides.
 
